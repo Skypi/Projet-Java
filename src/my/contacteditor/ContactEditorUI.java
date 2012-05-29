@@ -262,7 +262,7 @@ public class ContactEditorUI extends javax.swing.JFrame {
         jScrollPane3.setViewportView(jList1);
 
         jTextField9.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        jTextField9.setText("Rechercher");
+        jTextField9.setText("a");
 
         jToggleButton1.setText("Rechercher");
 
