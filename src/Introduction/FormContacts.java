@@ -80,6 +80,11 @@ public class FormContacts extends javax.swing.JFrame {
 
         txtRechercher.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         txtRechercher.setText("Rechercher");
+        txtRechercher.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtRechercherMouseClicked(evt);
+            }
+        });
 
         btnRechercher.setText("Rechercher");
         btnRechercher.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +134,7 @@ public class FormContacts extends javax.swing.JFrame {
                 .addContainerGap(255, Short.MAX_VALUE))
         );
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel11.setText("Liste de contact");
 
         jLabel1.setText("Nom :");
@@ -144,6 +149,7 @@ public class FormContacts extends javax.swing.JFrame {
 
         jLabel6.setText("Code postal :");
 
+        btnModifier.setForeground(new java.awt.Color(255, 153, 0));
         btnModifier.setLabel("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -151,6 +157,7 @@ public class FormContacts extends javax.swing.JFrame {
             }
         });
 
+        btnAjouter.setForeground(new java.awt.Color(0, 153, 0));
         btnAjouter.setText("Ajouter");
         btnAjouter.setMaximumSize(new java.awt.Dimension(81, 23));
         btnAjouter.setMinimumSize(new java.awt.Dimension(81, 23));
@@ -160,6 +167,7 @@ public class FormContacts extends javax.swing.JFrame {
             }
         });
 
+        btnSupprimer.setForeground(new java.awt.Color(255, 0, 0));
         btnSupprimer.setText("Supprimer");
         btnSupprimer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -175,7 +183,7 @@ public class FormContacts extends javax.swing.JFrame {
         jLabel8.setText("Loisirs");
         jLabel8.setToolTipText("");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14));
         jLabel9.setText("Fiche d'informations");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -196,16 +204,16 @@ public class FormContacts extends javax.swing.JFrame {
                             .addComponent(jLabel8))
                         .addGap(41, 41, 41)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
                             .addComponent(txtAdresse, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPrenom, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtNom, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(txtPrenom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE)
+                            .addComponent(txtNom, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 336, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnAjouter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnModifier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnSupprimer, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))
-                        .addGap(18, 18, 18))
+                        .addGap(280, 280, 280))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -220,7 +228,7 @@ public class FormContacts extends javax.swing.JFrame {
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtCdp, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addContainerGap())))
+                        .addContainerGap(417, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,20 +281,20 @@ public class FormContacts extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel11)))
-                .addGap(111, 111, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(36, 36, 36)
+                    .addComponent(jLabel11)
+                    .addGap(1159, 1204, Short.MAX_VALUE))
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1329, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -460,6 +468,11 @@ public class FormContacts extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erreur de recherche \n" + e.getMessage());
         }
     }//GEN-LAST:event_btnRechercherActionPerformed
+
+	private void txtRechercherMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtRechercherMouseClicked
+		if ("Rechercher".equals(txtRechercher.getText()))
+			txtRechercher.setText("");
+	}//GEN-LAST:event_txtRechercherMouseClicked
     
 // FIN GESTION BOUTON RECHERCHER
 // ---------------------------------------------------------------------------------------------   
