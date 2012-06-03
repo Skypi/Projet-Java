@@ -199,18 +199,16 @@
                                       <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="txtAdresse" alignment="0" min="-2" pref="252" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="txtNom" alignment="0" pref="252" max="32767" attributes="0"/>
-                                          <Component id="txtPrenom" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtNom" alignment="0" pref="252" max="32767" attributes="0"/>
+                                      <Component id="txtPrenom" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="1">
                                           <Component id="txtCdp" min="-2" pref="60" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="txtVille" min="-2" pref="154" max="-2" attributes="0"/>
+                                          <Component id="txtVille" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -309,10 +307,10 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtCdp" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtVille" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnAjouter" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnModifier" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="btnSupprimer" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtVille" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
