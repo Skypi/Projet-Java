@@ -162,7 +162,7 @@ public class FormContacts extends javax.swing.JFrame {
 
         jLabel6.setText("Code postal :");
 
-        btnModifier.setForeground(new java.awt.Color(255, 153, 0));
+        btnModifier.setForeground(new java.awt.Color(0, 0, 204));
         btnModifier.setLabel("Modifier");
         btnModifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,7 +170,7 @@ public class FormContacts extends javax.swing.JFrame {
             }
         });
 
-        btnAjouter.setForeground(new java.awt.Color(0, 153, 0));
+        btnAjouter.setForeground(new java.awt.Color(0, 102, 0));
         btnAjouter.setText("Ajouter");
         btnAjouter.setMaximumSize(new java.awt.Dimension(81, 23));
         btnAjouter.setMinimumSize(new java.awt.Dimension(81, 23));
