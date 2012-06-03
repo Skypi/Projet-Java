@@ -10,16 +10,9 @@ import java.sql.*;
  */
 public class connexionBdd {
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	recupererContacts();
-
-	}
+	public static String resultString;
 	
-	private static void recupererContacts() {
-		// TODO Auto-generated method stub
-		
-	}
+	public static String recupererContacts() { return resultString; }
 	
 	public class recupererContacts {
 		
@@ -30,7 +23,7 @@ public class connexionBdd {
 			String passwd = "";
 			Connection cn =null;
 			Statement st =null;
-                        String resultString = "";
+			
 			try {
 				// Step 1 : downloading of Driver
 				Class.forName("com.mysql.jdbc.Driver");
