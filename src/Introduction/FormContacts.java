@@ -469,15 +469,25 @@ public class FormContacts extends javax.swing.JFrame {
 			  JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs obligatoires.", "Suppression",JOptionPane.CLOSED_OPTION);
 		  else
 		  {
-			  if (resultSet.next() != false ){
-				  reponse = JOptionPane.showConfirmDialog(null, "Voulez-vous vraiment créer le contact :\n" + txtNom.getText() + " " + txtPrenom.getText() + "\n" + "alors qu'il existe déjà ?", "Confirmation" , JOptionPane.YES_NO_OPTION);
-			  }         
-
-			  if( reponse == JOptionPane.YES_OPTION){
-				  St.executeUpdate(rqt);
-				  AfficherContact();
-				  JOptionPane.showMessageDialog(null, "Vous avez créé le contact :\n" + txtNom.getText() + txtPrenom.getText() + ".");
+			  if (resultSet.next() != false )
+			  {
+				  reponse = JOptionPane.showConfirmDialog(null, "Voulez-vous vraiment créer le contact : " + txtNom.getText() + " " + txtPrenom.getText() + " alors qu'il existe déjà ?", "Confirmation" , JOptionPane.YES_NO_OPTION);
+				  if( reponse == JOptionPane.YES_OPTION){
+					  St.executeUpdate(rqt);
+					  AfficherContact();
+					  JOptionPane.showMessageDialog(null, "Vous avez créé le contact : " + txtNom.getText() + " " + txtPrenom.getText() + ".");
+				  }
 			  }
+			  else
+			  {
+				  reponse = JOptionPane.showConfirmDialog(null, "Voulez-vous vraiment créer le contact : " + txtNom.getText() + " " + txtPrenom.getText() + " ?", "Confirmation" , JOptionPane.YES_NO_OPTION);
+				  if( reponse == JOptionPane.YES_OPTION){
+					  St.executeUpdate(rqt);
+					  AfficherContact();
+					  JOptionPane.showMessageDialog(null, "Vous avez créé le contact :\n" + txtNom.getText() + txtPrenom.getText() + ".");
+				  }
+			  }
+				  
 		  }
           
       } catch (Exception e) {
@@ -528,7 +538,7 @@ public class FormContacts extends javax.swing.JFrame {
 					rqtDel = "DELETE FROM contacts WHERE nom = ('"+txtNom.getText()+"') AND prenom = ('"+txtPrenom.getText()+"')";
 					St.executeUpdate(rqtDel);
 					AfficherContact();
-					JOptionPane.showMessageDialog(null, "Le contact a été supprimé\n");
+					JOptionPane.showMessageDialog(null, "Le contact a été supprimé.");
 				}   
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erreur de suppression de contact \n" + e.getMessage());
