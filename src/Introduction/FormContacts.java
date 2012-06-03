@@ -470,13 +470,13 @@ public class FormContacts extends javax.swing.JFrame {
 		  else
 		  {
 			  if (resultSet.next() != false ){
-				  reponse = JOptionPane.showConfirmDialog(null, "Voulez-vous vraiment créer le contact\n" + txtNom.getText() + txtPrenom.getText() +"\n alors qu'il existe déjà ?", "Confirmation" , JOptionPane.YES_NO_OPTION);
+				  reponse = JOptionPane.showConfirmDialog(null, "Voulez-vous vraiment créer le contact :\n" + txtNom.getText() + " " + txtPrenom.getText() + "\n" + "alors qu'il existe déjà ?", "Confirmation" , JOptionPane.YES_NO_OPTION);
 			  }         
 
 			  if( reponse == JOptionPane.YES_OPTION){
 				  St.executeUpdate(rqt);
 				  AfficherContact();
-				  JOptionPane.showMessageDialog(null, "Vous avez créé le contact \n" + txtNom.getText() + txtPrenom.getText() + ".");
+				  JOptionPane.showMessageDialog(null, "Vous avez créé le contact :\n" + txtNom.getText() + txtPrenom.getText() + ".");
 			  }
 		  }
           
@@ -492,13 +492,24 @@ public class FormContacts extends javax.swing.JFrame {
     
     private void btnModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifierActionPerformed
         rqtModif = "UPDATE contacts SET prenom='"+txtPrenom.getText()+"', email='"+txtEmail.getText()+"', adresse='"+txtAdresse.getText()+"', ville='"+txtVille.getText()+"', cdp='"+txtCdp.getText()+"', entreprise='"+txtEntreprise.getText()+"', loisirs='"+txtLoisirs.getText()+"' WHERE nom = ('"+txtNom.getText()+"')";
-        
+		sel = "SELECT nom FROM contacts WHERE nom = ('"+txtNom.getText()+"')"; 
+      
         try {
-            if(JOptionPane.showConfirmDialog(null, "Confirmer la modification","Modification",JOptionPane.YES_NO_OPTION)== JOptionPane.OK_OPTION){
-            St.executeUpdate(rqtModif);
-            AfficherContact(); // Mise à jour de la liste de contacts
-            JOptionPane.showMessageDialog(null, "Vous avez créer le contact \n" + txtNom.getText());
-            }
+			// Verification de doublons dans la base de données
+			St.executeQuery(sel);
+			ResultSet resultSet = St.executeQuery(sel);
+
+			if (resultSet.next() == false)
+				JOptionPane.showMessageDialog(null, "Veuillez choisir un contact à modifier.", "Modification",JOptionPane.CLOSED_OPTION);
+			else
+				if ("".equals(txtNom.getText()) || "".equals(txtPrenom.getText()) || "".equals(txtAdresse.getText()) || "".equals(txtCdp.getText()) || "".equals(txtEmail.getText()) || "".equals(txtVille.getText()))
+					JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs obligatoires pour modifier le contact.", "Modification",JOptionPane.CLOSED_OPTION);
+				else
+					if(JOptionPane.showConfirmDialog(null, "Confirmer la modification ?","Modification",JOptionPane.YES_NO_OPTION)== JOptionPane.OK_OPTION){
+						St.executeUpdate(rqtModif);
+						AfficherContact(); // Mise à jour de la liste de contacts
+						JOptionPane.showMessageDialog(null, "Vous avez modifié le contact :\n" + txtNom.getText() + " " + txtPrenom.getText() + ".");
+					}
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erreur de modification de contact \n" + e.getMessage());
         }
